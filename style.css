@@ -331,85 +331,46 @@ footer p {
 
 
 
-
-.videoadvertisement {
-  max-width: 1100px;
+/* Amazon Advertisement Section */
+.amazonadvertisement {
+  margin: 1.5rem auto;
+  max-width: 900px; /* keeps it big but not oversized */
   width: 95%;
-  margin: 1rem auto;
-  border-radius: 12px;
-  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 94, 0, 0.6);
+  animation: adGlow 3s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.videoadvertisement video {
+.amazonadvertisement:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(255, 94, 0, 0.9);
+}
+
+.amazonadvertisement img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  border-radius: 12px;
-  pointer-events: none; /* clicks go to link */
-}
-
-/* CTA overlay */
-.video-cta {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  background: rgba(0,0,0,0.55);
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.video-cta span {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffeb3b;
-  text-shadow: 1px 1px 3px #000;
-}
-
-.buy-btn {
-  background: #ff6600;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 14px;
   cursor: pointer;
-  animation: pulseBtn 1.5s infinite;
-  transition: 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-.buy-btn:hover {
-  background: #ff4500;
-  transform: scale(1.05);
+.amazonadvertisement img:hover {
+  opacity: 0.9;
 }
 
-/* Animations */
-@keyframes pulseBtn {
-  0% { box-shadow: 0 0 0 rgba(255,102,0,0.6); }
-  50% { box-shadow: 0 0 20px rgba(255,102,0,1); }
-  100% { box-shadow: 0 0 0 rgba(255,102,0,0.6); }
+/* Subtle glowing animation around the ad */
+@keyframes adGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 94, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 94, 0, 0.9);
+  }
 }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translate(-50%, 30px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
-}
-
-
-
-
 
 
 
